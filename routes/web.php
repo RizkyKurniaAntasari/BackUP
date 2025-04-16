@@ -17,3 +17,5 @@ Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('profile', [AuthController::class, 'profile'])->name('profile');
+Route::get('pengaduan', [AuthController::class, 'pengaduan'])->name('pengaduan');
+Route::get('pengumuman', [AuthController::class, 'pengumuman'])->name('pengumuman');

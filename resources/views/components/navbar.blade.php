@@ -35,15 +35,15 @@
 </header>
 
 <!-- Navbar Menu -->
-<nav class="bg-[#143D1E] text-white px-6 py-2">
+<nav class="bg-[#143D1E] text-white px-6 py-4">
     <ul class="flex space-x-6 text-sm font-medium justify-center">
         <li><a href="dashboard" class="hover:text-yellow-400">BERANDA</a></li>
         <li><a href="{{ route('profile') }}" class="hover:text-yellow-400">PROFIL</a></li>
         <li><a href="#" class="hover:text-yellow-400">STATISTIK</a></li>
         <li><a href="#" class="hover:text-yellow-400">ARTIKEL</a></li>
-        <li><a href="#" class="hover:text-yellow-400">PENGUMUMAN</a></li>
+        <li><a href="pengumuman" class="hover:text-yellow-400">PENGUMUMAN</a></li>
         <li><a href="#" class="hover:text-yellow-400">PENYULUHAN</a></li>
-        <li><a href="#" class="hover:text-yellow-400">PENGADUAN</a></li>
+        <li><a href="pengaduan" class="hover:text-yellow-400">PENGADUAN</a></li>
         <li><a href="#" class="hover:text-yellow-400">SUBSIDI</a></li>
         <li><a href="#" class="hover:text-yellow-400">KOMUNITAS</a></li>
     </ul>

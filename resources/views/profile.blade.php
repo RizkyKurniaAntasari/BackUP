@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <title>SIMAPAN - Dashboard</title>
@@ -9,7 +8,6 @@
         function toggleContent(id, button) {
             const content = document.getElementById(id);
             const icon = button.querySelector(".icon");
-
             content.classList.toggle("hidden");
 
             // Ubah ikon
@@ -27,7 +25,7 @@
     {{-- CONTENT --}}
     <div class="max-w-3xl mx-auto space-y-4">
         <!-- SEJARAH -->
-        <div class="bg-green-800 text-white rounded shadow">
+        <div class="bg-green-800 text-white rounded shadow mt-10 ">
             <button onclick="toggleContent('sejarah', this)"
                 class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                 <span class="icon">›</span> SEJARAH ORGANISASI
@@ -128,7 +126,7 @@
     </div>
 
     {{-- FOOTER  --}}
-    <footer class="bg-green-900 text-white px-6 py-6 mt-8">
+    <footer class="bg-green-900 text-white px-6 py-6 mt-16">
         <div class="flex flex-col md:flex-row justify-between text-sm">
             <div class="mb-4 md:mb-0">
                 <img src="\img\logo-simapan.png" class="w-32 mb-2" alt="SIMAPAN Logo">
