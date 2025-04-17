@@ -64,9 +64,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen relative">
-
+<body class="min-h-screen relative font-poppins">
     <!-- Background -->
     <div class="absolute inset-0 bg-[url('/img/Login_IMG_Arabica.jpg')] bg-fixed bg-center bg-no-repeat bg-cover min-h-screen z-0"></div>
     <!-- Container utama -->

@@ -59,21 +59,19 @@
     <meta charset="UTF-8">
     <title>SIMAPAN - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></head>
 <style>
     body {
         font-family: 'Poppins', sans-serif;
     }
 </style>
 
-
 <body class="bg-green-100 font-poppins">
 
     <x-navbar />
 
     <!-- Hero Section -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-white ">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-[#DBE7C9] ">
         <!-- Gambar kiri -->
         <div class="md:col-span-1 overflow-hidden transition-transform hover:scale-105 ease-in-out duration-300">
             <img src="\img\left.jpg" alt="Tanaman" class="rounded-md w-full h-full object-cover">
@@ -216,24 +214,6 @@
         </div>
     </section>
 
-    {{-- FOOTER  --}}
-    <footer class="bg-green-900 text-white px-6 py-6 mt-8">
-        <div class="flex flex-col md:flex-row justify-between text-sm">
-            <div class="mb-4 md:mb-0">
-                <img src="\img\logo-simapan.png" class="w-32 mb-2" alt="SIMAPAN Logo">
-                <p>Sistem Informasi Manajemen Pertanian Kabupaten Lampung Barat</p>
-                <p class="mt-2 text-xs">© Copyright 2025. Kelompok Lincari - Jurusan Ilmu Komputer, Universitas Lampung
-                </p>
-            </div>
-            <div>
-                <p>Kantor Dinas Pertanian Kab. Lambar</p>
-                <p>Jl. Raden Intan, Way Mengaku, Komp. Perkantoran Pemkab Lampung Barat, Liwa, Lampung, 34842</p>
-                <p>📞 Telp: 1234-5678-910</p>
-                <p>📱 WhatsApp: 0812-3456-7890</p>
-                <p>📧 Email: dinaspertanianlambar@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-
+   <x-footer/>
 </body>
 </html>

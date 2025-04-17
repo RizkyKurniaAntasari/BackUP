@@ -1,5 +1,7 @@
 <!-- Header Atas -->
-<header class="bg-[#D6E6C5] px-6 py-3 flex items-center justify-between">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<header class="bg-[#D6E6C5] px-6 py-3 flex items-center justify-between font-poppins">
     <!-- Kiri: Logo + Nama -->
     <div class="flex items-center space-x-4">
         <!-- Logo (bisa diganti gambar) -->
@@ -13,9 +15,13 @@
     <div class="flex items-center space-x-4">
         <!-- Ikon sosmed -->
         <div class="flex space-x-2 text-[#143D1E] text-xl">
-            <a href="https://instagram.com"><img src="\img\ig-rev.png" class="w-10 pt-1"></a>
-            <a href="https://x.com"><img src="\img\x-rev.png" class="w-10"></a>
-
+            {{-- <a href="https://instagram.com"><img src="\img\ig-rev.png" class="w-10 pt-1"></a>
+            <a href="https://x.com"><img src="\img\x-rev.png" class="w-10"></a> --}}
+            <a href="#" class=""><i class="fab fa-instagram"></i></a>
+            <a href="#" class=""><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class=""><i class="fab fa-youtube"></i></a>
+            <a href="#" class=""><i class="fab fa-x"></i></a>
+            <a href="#" class=""><i class="fab fa-tiktok"></i></a>
         </div>
 
         <!-- Search -->
@@ -35,16 +41,16 @@
 </header>
 
 <!-- Navbar Menu -->
-<nav class="bg-[#143D1E] text-white px-6 py-4">
+<nav class="bg-[#143D1E] text-white px-6 py-4 font-poppins">
     <ul class="flex space-x-6 text-sm font-medium justify-center">
         <li><a href="dashboard" class="hover:text-yellow-400">BERANDA</a></li>
         <li><a href="{{ route('profile') }}" class="hover:text-yellow-400">PROFIL</a></li>
-        <li><a href="#" class="hover:text-yellow-400">STATISTIK</a></li>
+        <li><a href="statistik" class="hover:text-yellow-400">STATISTIK</a></li>
         <li><a href="#" class="hover:text-yellow-400">ARTIKEL</a></li>
         <li><a href="pengumuman" class="hover:text-yellow-400">PENGUMUMAN</a></li>
         <li><a href="#" class="hover:text-yellow-400">PENYULUHAN</a></li>
         <li><a href="pengaduan" class="hover:text-yellow-400">PENGADUAN</a></li>
         <li><a href="#" class="hover:text-yellow-400">SUBSIDI</a></li>
-        <li><a href="#" class="hover:text-yellow-400">KOMUNITAS</a></li>
+        {{-- <li><a href="#" class="hover:text-yellow-400">KOMUNITAS</a></li> --}}
     </ul>
 </nav>
