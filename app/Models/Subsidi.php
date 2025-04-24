@@ -8,5 +8,5 @@ class Subsidi extends Model
 {
     protected $table = 'subsidi';
 
-    protected $fillable = ['username', 'jenis', 'tanggal', 'status'];
+    protected $fillable = ['nama', 'alamat', 'nik', 'jenis_subsidi', 'jenis_pupuk', 'volume_pupuk'];
 }

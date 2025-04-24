@@ -1,64 +1,32 @@
 <?php
 
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use App\Models\Subsidi;
-
-// class SubsidiController extends Controller
-// {
-//     public function index()
-//     {
-//         $subsidi = Subsidi::all();
-//         return view('petugas.p_subsidi', compact('subsidi'));
-//     }
-
-//     public function store(Request $request)
-//     {
-//         $validated = $request->validate([
-//             'username' => 'required',
-//             'jenis' => 'required',
-//             'tanggal' => 'required|date',
-//             'status' => 'required|in:pending,disetujui,ditolak'
-//         ]);
-
-//         Subsidi::create($validated);
-//         return redirect()->back()->with('success', 'Data subsidi berhasil ditambahkan!');
-//     }
-// }
-
-
 namespace App\Http\Controllers;
 
-use App\Models\Subsidi;
 use Illuminate\Http\Request;
+use App\Models\Subsidi;
 
 class SubsidiController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        // Ambil filter dari request
-        $status = $request->input('status');
-        $jenis = $request->input('jenis');
-        $tanggal = $request->input('tanggal');
+        $subsidi = Subsidi::all();
+        return view('pengajuan_subsidi', compact('subsidi'));
+    }
 
-        // Bangun query untuk subsidi
-        $subsidiQuery = Subsidi::query();
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        $validated = $request->validate([
+            'nama' => 'required|string|max:100',
+            'alamat' => 'required|string',
+            'nik' => 'required|numeric|digits:16',
+            'jenis_subsidi' => 'required|string',
+            'jenis_pupuk' => 'required|string',
+            'volume_pupuk' => 'required|numeric|min:1'
+        ]);
 
-        if ($status) {
-            $subsidiQuery->where('status', $status);
-        }
-        if ($jenis) {
-            $subsidiQuery->where('jenis', $jenis);
-        }
-        if ($tanggal) {
-            $subsidiQuery->whereDate('tanggal', $tanggal);
-        }
+        Subsidi::create($validated);
 
-        // Ambil data subsidi sesuai filter
-        $subsidi = $subsidiQuery->get();
-
-        return view('petugas.p_subsidi.index', compact('subsidi'));
+        return redirect()->back()->with('success', 'Pengajuan subsidi berhasil dikirim!');
     }
 }
-

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\SubsidiController;
+use App\Models\Subsidi;
 
 Route::get('/', function(){
     return view('welcome');
@@ -24,7 +26,8 @@ Route::get('/petugas/p_pengaduan', function(){
 });
 
 Route::get('/petugas/p_subsidi', function(){
-    return view ('petugas.p_subsidi');
+    $subsidi = Subsidi::all();
+    return view ('petugas.p_subsidi', compact('subsidi'));
 });
 
 Route::get('/petugas/p_pengaturan', function(){
@@ -32,8 +35,15 @@ Route::get('/petugas/p_pengaturan', function(){
 });
 
 // user
-Route::get('pengajuan_subsidi', function(){
-    return view ('pengajuan_subsidi');
+// Route::get('pengajuan_subsidi', function(){
+//     return view ('pengajuan_subsidi');
+// });
+
+Route::get('/pengajuan_subsidi', [SubsidiController::class, 'index']);
+Route::post('/store', [SubsidiController::class, 'store'])->name('pengajuan_subsidi.store');
+ 
+Route::get('pengaduan', function(){
+    return view ('pengaduan');
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -50,8 +60,5 @@ Route::get('pengaduan', [AuthController::class, 'pengaduan'])->name('pengaduan')
 Route::get('pengumuman', [AuthController::class, 'pengumuman'])->name('pengumuman');
 Route::get('statistik', [AuthController::class, 'statistik'])->name('statistik');
 
-// SUBSIDI
-use App\Http\Controllers\SubsidiController;
-
-Route::get('/pengaduan', [SubsidiController::class, 'index']);
-Route::post('/pengaduan', [SubsidiController::class, 'store'])->name('subsidi.store');
+// // SUBSIDI
+// use App\Http\Controllers\SubsidiController;

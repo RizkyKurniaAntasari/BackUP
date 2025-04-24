@@ -26,7 +26,7 @@
 
         <!-- Search -->
         <div class="relative">
-            <input type="text" placeholder="⌕ Cari disini"
+            <input type="text" placeholder="Cari disini"
                 class="pl-8 pr-3 py-1.5 border rounded-full text-sm outline-none focus:ring-2 focus:ring-green-700" />
             <span class="absolute left-2 top-1.5 text-gray-400">
                 <i class="fas fa-search"></i>
@@ -43,14 +43,14 @@
 <!-- Navbar Menu -->
 <nav class="bg-[#143D1E] text-white px-6 py-4 font-poppins">
     <ul class="flex space-x-6 text-sm font-medium justify-center">
-        <li><a href="dashboard" class="hover:text-yellow-400">BERANDA</a></li>
-        <li><a href="{{ route('profile') }}" class="hover:text-yellow-400">PROFIL</a></li>
-        <li><a href="statistik" class="hover:text-yellow-400">STATISTIK</a></li>
-        <li><a href="#" class="hover:text-yellow-400">ARTIKEL</a></li>
+        <li><a href="dashboard" class="hover:text-yellow-400 m-5">BERANDA</a></li>
+        <li><a href="{{ route('profile') }}" class=" m-5 hover:text-yellow-400">PROFIL</a></li>
+        <li><a href="statistik" class="  m-5 hover:text-yellow-400">STATISTIK</a></li>
+        <li><a href="#" class="  m-5 hover:text-yellow-400">ARTIKEL</a></li>
         <li><a href="pengumuman" class="hover:text-yellow-400">PENGUMUMAN</a></li>
-        <li><a href="#" class="hover:text-yellow-400">PENYULUHAN</a></li>
-        <li><a href="pengaduan" class="hover:text-yellow-400">PENGADUAN</a></li>
-        <li><a href="pengajuan_subsidi" class="hover:text-yellow-400">SUBSIDI</a></li>
+        <li><a href="#" class="  m-5 hover:text-yellow-400">PENYULUHAN</a></li>
+        <li><a href="pengaduan" class=" m-5 hover:text-yellow-400">PENGADUAN</a></li>
+        <li><a href="pengajuan_subsidi" class=" m-5 hover:text-yellow-400">SUBSIDI</a></li>
         {{-- <li><a href="#" class="hover:text-yellow-400">KOMUNITAS</a></li> --}}
     </ul>
 </nav>

@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('subsidi', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('jenis');
-            $table->date('tanggal');
-            $table->enum('status', ['pending', 'disetujui', 'ditolak'])->default('pending');
+            $table->string('nama');
+            $table->string('alamat');
+            $table->integer('nik');
+            $table->string('jenis_subsidi');
+            $table->string('jenis_pupuk');
+            $table->string('volume_pupuk');
             $table->timestamps();
         });
     }    
