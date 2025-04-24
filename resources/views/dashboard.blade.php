@@ -71,7 +71,7 @@
     <x-navbar />
 
     <!-- Hero Section -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-[#DBE7C9] ">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-[#DBE7C9]">
         <!-- Gambar kiri -->
         <div class="md:col-span-1 overflow-hidden transition-transform hover:scale-105 ease-in-out duration-300">
             <img src="\img\left.jpg" alt="Tanaman" class="rounded-md w-full h-full object-cover">

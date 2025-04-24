@@ -7,6 +7,28 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+Route::get('/petugas/p_login', function(){
+    return view ('petugas.p_login');
+});
+
+Route::get('/petugas/p_dashboard', function(){
+    return view ('petugas.p_dashboard');
+});
+
+Route::get('/petugas/p_datadinas', function(){
+    return view ('petugas.p_datadinas');
+})->name('petugas.datadinas');
+
+Route::get('/petugas/p_pengaduan', function(){
+    return view ('petugas.p_pengaduan');
+});
+
+Route::get('/petugas/p_subsidi', function(){
+    return view ('petugas.p_subsidi');
+});
+
+
+
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
 
