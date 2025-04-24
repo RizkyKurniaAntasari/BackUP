@@ -50,7 +50,7 @@
         <li><a href="pengumuman" class="hover:text-yellow-400">PENGUMUMAN</a></li>
         <li><a href="#" class="hover:text-yellow-400">PENYULUHAN</a></li>
         <li><a href="pengaduan" class="hover:text-yellow-400">PENGADUAN</a></li>
-        <li><a href="#" class="hover:text-yellow-400">SUBSIDI</a></li>
+        <li><a href="pengajuan_subsidi" class="hover:text-yellow-400">SUBSIDI</a></li>
         {{-- <li><a href="#" class="hover:text-yellow-400">KOMUNITAS</a></li> --}}
     </ul>
 </nav>
