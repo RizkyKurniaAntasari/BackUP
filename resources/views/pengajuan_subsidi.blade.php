@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Pengajuan Subsidi</title>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,12 +15,6 @@
     @include('components.navbar')
     <div class=" bg-[#DBE7C9] p-10 rounded min-h-screen items-center justify-center">
         <h1 class="text-center text-2xl font-bold text-green-900 mb-8">PENGAJUAN SUBSIDI</h1>
-        @if (session('success'))
-            <div class="bg-green-100 text-green-800 px-4 py-2 rounded mb-4">
-                {{ session('success') }}
-            </div>
-        @endif
-
         <form action="{{ route('pengajuan_subsidi.store') }}" method="POST" class="space-y-6" autocomplete="off">
             @csrf
 
@@ -56,63 +51,112 @@
                 @enderror
             </div>
 
-            <!-- JENIS SUBSIDI -->
             <div class="grid grid-cols-4 gap-4 items-center">
                 <label for="jenis_subsidi" class="font-bold text-green-900 col-span-1">Jenis Subsidi</label>
-                <select id="jenis_subsidi" name="jenis_subsidi" required
-                    class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white focus:outline-none">
-                    <option value="" disabled {{ old('jenis_subsidi') ? '' : 'selected' }}>Pilih Jenis Subsidi
-                    </option>
-                    <option value="pupuk" {{ old('jenis_subsidi') == 'pupuk' ? 'selected' : '' }}>Pupuk</option>
-                    <option value="benih" {{ old('jenis_subsidi') == 'benih' ? 'selected' : '' }}>Benih</option>
-                    <option value="alat" {{ old('jenis_subsidi') == 'alat' ? 'selected' : '' }}>Alat Pertanian
-                    </option>
-                    <option value="lainnya" {{ old('jenis_subsidi') == 'lainnya' ? 'selected' : '' }}>Lainnya</option>
-                </select>
-                @error('jenis_subsidi')
-                    <p class="text-red-500 text-sm col-span-4">{{ $message }}</p>
-                @enderror
+                <div class="col-span-3 relative">
+                    <select id="jenis_subsidi" name="jenis_subsidi"
+                        class="w-full p-3 rounded bg-[#294B29] opacity-50 text-white appearance-none focus:outline-none">
+                        <option value="" disabled selected>Pilih Jenis Subsidi</option>
+                        <option value="pupuk">Pupuk</option>
+                        <option value="benih">Benih</option>
+                        <option value="pestisida">Pestisida</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
             </div>
-
-            <!-- JENIS PUPUK -->
-            <div class="grid grid-cols-4 gap-4 items-center">
-                <label for="jenis_pupuk" class="font-bold text-green-900 col-span-1">Jenis Pupuk</label>
-                <select id="jenis_pupuk" name="jenis_pupuk" required
-                    class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white focus:outline-none">
-                    <option value="" disabled {{ old('jenis_pupuk') ? '' : 'selected' }}>Pilih Jenis Pupuk
-                    </option>
-                    <option value="urea" {{ old('jenis_pupuk') == 'urea' ? 'selected' : '' }}>Urea</option>
-                    <option value="za" {{ old('jenis_pupuk') == 'za' ? 'selected' : '' }}>ZA</option>
-                    <option value="sp36" {{ old('jenis_pupuk') == 'sp36' ? 'selected' : '' }}>SP-36</option>
-                    <option value="npk" {{ old('jenis_pupuk') == 'npk' ? 'selected' : '' }}>NPK</option>
-                    <option value="organik" {{ old('jenis_pupuk') == 'organik' ? 'selected' : '' }}>Organik</option>
-                </select>
-                @error('jenis_pupuk')
-                    <p class="text-red-500 text-sm col-span-4">{{ $message }}</p>
-                @enderror
+            <div id="pupuk_fields" class="space-y-4 hidden">
+                <!-- Jenis Pupuk -->
+                <div class="grid grid-cols-4 gap-4 items-center">
+                    <label for="jenis_pupuk" class="font-bold text-green-900 col-span-1">Jenis Pupuk</label>
+                    <div class="col-span-3 relative">
+                        <select id="jenis_pupuk" name="jenis_pupuk"
+                            class="w-full p-3 rounded bg-[#294B29] opacity-50 text-white appearance-none focus:outline-none">
+                            <option value="">Pilih Jenis Pupuk</option>
+                            <option value="urea">UREA</option>
+                            <option value="npk">NPK</option>
+                            <option value="za">ZA</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Volume Pupuk -->
+                <div class="grid grid-cols-4 gap-4 items-center">
+                    <label for="volume_pupuk" class="font-bold text-green-900 col-span-1">Volume Pupuk</label>
+                    <input type="number" id="volume_pupuk" name="volume_pupuk"
+                        placeholder="Masukkan volume (kg/liter)"
+                        class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white placeholder-white focus:outline-none">
+                </div>
             </div>
-
-            <!-- VOLUME PUPUK -->
-            <div class="grid grid-cols-4 gap-4 items-center mt-4">
-                <label for="volume_pupuk" class="font-bold text-green-900 col-span-1">Volume Pupuk</label>
-                <input type="number" id="volume_pupuk" name="volume_pupuk" placeholder="Masukkan volume (kg/liter)"
-                    required
-                    class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white placeholder-white focus:outline-none"
-                    value="{{ old('volume_pupuk') }}">
-                @error('volume_pupuk')
-                    <p class="text-red-500 text-sm col-span-4">{{ $message }}</p>
-                @enderror
-            </div>
-
+            
+            <!-- Tombol Kirim -->
             <div class="flex justify-end pt-4">
-                <button type="submit" class="bg-green-900 text-white px-6 py-2 rounded hover:bg-green-800 transition">
+                <button type="submit"
+                    class="bg-green-900 text-white px-6 py-2 rounded hover:bg-green-800 transition">
                     KIRIM
                 </button>
             </div>
         </form>
-
     </div>
+
     @include('components.footer')
+    <script>
+        // Tampilkan input tambahan saat pilih "pupuk"
+        document.getElementById('jenis_subsidi').addEventListener('change', function () {
+            const pupukFields = document.getElementById('pupuk_fields');
+            if (this.value === 'pupuk') {
+                pupukFields.classList.remove('hidden');
+            } else {
+                pupukFields.classList.add('hidden');
+            }
+        });
+    
+        // Saat form dikirim (biarkan dikirim ke Laravel)
+        document.querySelector('form').addEventListener('submit', function () {
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "Mengirim...";
+        });
+    
+        // Tampilkan SweetAlert jika ada session success dari backend Laravel
+        @if (session('success'))
+            Swal.fire({
+                title: 'Pengajuan Berhasil!',
+                text: '{{ session("success") }}',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                draggable:true
+
+            });
+        @endif
+    
+        // Toggle notifikasi
+        document.getElementById('notificationBtn')?.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('notificationDropdown');
+            dropdown.classList.toggle('hidden');
+        });
+    
+        document.getElementById('notificationDropdown')?.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    
+        window.addEventListener('click', function () {
+            const dropdown = document.getElementById('notificationDropdown');
+            dropdown?.classList.add('hidden');
+        });
+    </script>
+        
 </body>
 
 </html>
