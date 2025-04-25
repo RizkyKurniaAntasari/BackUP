@@ -15,14 +15,12 @@
     <div class="flex items-center space-x-4">
         <!-- Ikon sosmed -->
         <div class="flex space-x-4 text-[#143D1E] text-xl">
-            {{-- <a href="https://instagram.com"><img src="\img\ig-rev.png" class="w-10 pt-1"></a>
-            <a href="https://x.com"><img src="\img\x-rev.png" class="w-10"></a> --}}
             <img src="{{ asset('icon/instagram.png') }}" class="w-6">
             <img src="{{ asset('icon/facebook.png') }}" class="w-6">
             <img src="{{ asset('icon/youtube.png') }}" class="w-8">
             <img src="{{ asset('icon/x.png') }}" class="w-6">
             <img src="{{ asset('icon/tiktok.png') }}" class="w-6">
-            
+
         </div>
 
         <!-- Search -->
@@ -34,11 +32,18 @@
             </span>
         </div>
 
-        <!-- Sign In -->
-        <button class="bg-[#143D1E] text-white px-4 py-1.5 rounded-full text-sm hover:bg-green-900">
-            <a href="{{ route('login') }}">Sign in</a>
-        </button>
-    </div>
+        <!-- Sign In atau Avatar -->
+        @guest
+            <button class="bg-[#143D1E] text-white px-4 py-1.5 rounded-full text-sm hover:bg-green-900">
+                <a href="{{ route('login') }}">Sign in</a>
+            </button>
+        @endguest
+
+        @auth
+            <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}" alt="Avatar"
+                class="w-9 h-9 rounded-full object-cover border-2 border-white hover:border-yellow-400 transition duration-300">
+        @endauth
+
 </header>
 
 <!-- Navbar Menu -->
@@ -52,6 +57,5 @@
         <li><a href="penyuluhan" class="  m-5 hover:text-yellow-400">PENYULUHAN</a></li>
         <li><a href="pengaduan" class=" m-5 hover:text-yellow-400">PENGADUAN</a></li>
         <li><a href="pengajuan_subsidi" class=" m-5 hover:text-yellow-400">SUBSIDI</a></li>
-        {{-- <li><a href="#" class="hover:text-yellow-400">KOMUNITAS</a></li> --}}
     </ul>
 </nav>

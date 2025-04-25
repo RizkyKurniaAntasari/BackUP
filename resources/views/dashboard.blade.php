@@ -5,63 +5,84 @@
     <meta charset="UTF-8">
     <title>SIMAPAN - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></head>
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
 
 <body class="bg-green-100 font-poppins">
 
     <x-navbar />
-
-    <!-- Hero Section -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-[#DBE7C9]">
-        <!-- Gambar kiri -->
-        <div class="md:col-span-1 overflow-hidden transition-transform hover:scale-105 ease-in-out duration-300">
-            <img src="/img/left.jpg" alt="Tanaman" class="rounded-md w-full h-full object-cover">
-        </div>
+        <img src="{{ asset('icon/beranda_sayur.png') }}" alt=""
+            class="rounded-md hover:scale-105 transition w-full h-full object-cover" />
 
-        <!-- Tengah -->
-        <div
-            class="md:col-span-1 overflow-hidden relative transition-transform hover:scale-105 ease-in-out duration-300">
-            <img src="/img/tengah.jpg" alt="" class="rounded-md w-full h-64 object-cover">
-            <div class="absolute bottom-0 bg-black bg-opacity-60 text-white p-4 w-full">
-                <h2 class="text-lg font-semibold">Tren Kopi Spesialti: Meningkatnya Minat Konsumen terhadap Kopi
-                    Berkualitas Tinggi</h2>
-                <p class="text-sm mt-1">23 Maret 2025</p>
+        <div class="relative rounded-md overflow-hidden hover:scale-105 transition">
+            <img src="{{ asset('icon/beranda_kopi.png') }}" alt="" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4">
+                <h2 class="text-lg font-bold">Tren Kopi Spesialti: Meningkatnya Minat Konsumen terhadap Kopi Berkualitas
+                    Tinggi</h2>
+                <p class="text-xs mt-1">24 Maret 2025</p>
             </div>
         </div>
 
-        <!-- Gambar kanan -->
-        <div class="md:col-span-1 overflow-hidden transition-transform hover:scale-105 ease-in-out duration-300">
-            <img src="/img/cabai.jpeg" alt="cabai.jpeg" class="rounded-md w-full h-full object-cover">
-        </div>
+        <img src="{{ asset('img/cabai.jpeg') }}" alt=""
+            class="rounded-md hover:scale-105 transition w-full h-full object-cover" />
     </section>
+
 
     <!-- Artikel + Statistik -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-6 bg-[#294B29]">
-        <!-- Artikel -->
-        <div class="bg-[#294B29] text-white p-6 rounded-md">
-            <h3 class="font-bold text-lg mb-2">PERAN ARTIFICIAL INTELLIGENCE (AI) DALAM MEMPREDIKSI HAMA DAN PENYAKIT PADA TANAMAN SAYURAN</h3>
-            <p class="mt-4 text-xs">23 Maret 2025</p>
-            <p class="text-justify">Lampung barat - Dalam dunia pertanian modern, keberlanjutan produksi sayuran sering kali menghadapi tantangan besar akibat serangan hama dan penyakit. Jika tidak ditangani dengan baik, serangan ini dapat menyebabkan penurunan hasil panen yang signifikan dan berdampak pada ketahanan pangan  serta ekonomi petani. Namun, dengan kemajuan Artificial Intelligence (AI), kini petani dapat memanfaatkan teknologi untuk memprediksi dan mengendalikan hama serta penyakit secara lebih cepat dan akurat. 
-                <br><br>
-                AI bekerja dengan cara mengumpulkan dan menganalisis data dari berbagai sumber, seperti citra satelit, sensor cuaca, foto tanaman, dan data historis tentang serangan hama atau penyakit.</p>
+    <section class="grid md:grid-cols-[2fr_1fr] bg-[#294B29] text-white px-6 py-8 gap-6">
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="md:w-1/2">
+                <h3 class="text-lg font-bold">
+                    PERAN ARTIFICIAL INTELLIGENCE (AI) DALAM MEMPREDIKSI HAMA DAN PENYAKIT PADA TANAMAN SAYURAN
+                </h3>
+                <p class="text-xs my-2">23 Maret 2025</p>
+                <p class="text-sm text-justify">
+                    Lampung barat - Dalam dunia pertanian modern, keberlanjutan produksi sayuran sering kali menghadapi
+                    tantangan besar akibat serangan hama dan penyakit. Jika tidak ditangani dengan baik, serangan ini
+                    dapat menyebabkan penurunan hasil panen yang signifikan dan berdampak pada ketahanan pangan serta
+                    ekonomi petani. Namun, dengan kemajuan Artificial Intelligence (AI), kini petani dapat memanfaatkan
+                    teknologi untuk memprediksi dan mengendalikan hama serta penyakit secara lebih cepat dan akurat.
+                </p>
+                <button
+                    class="bg-[#39731B] text-[#DBE7C9] rounded-full px-4 py-2 mt-4 font-semibold text-sm hover:bg-[#14491F] ">Selengkapnya</button>
+            </div>
+            <img src="{{ asset('icon/beranda_sayur_artikel.png') }}" alt="AI"
+                class="w-full md:w-1/2 rounded-md object-cover" />
         </div>
 
-        <!-- Statistik -->
-        <div class="bg-white rounded-md p-6">
-            <h3 class="text-green-800 font-bold mb-2">Statistik Harga Kopi Lampung</h3>
-            <p class="text-xs text-gray-500 mb-4">Last Update: 30-03-2025</p>
-            <div class="w-full h-32 bg-green-100 rounded-md flex items-center justify-center">
-                <!-- Chart bisa disisipkan nanti pakai JS -->
-                <span class="text-green-700 text-2xl font-bold">64K</span>
+        <div class="space-y-4">
+            <div class="bg-white text-[#294B29] p-4 rounded-md">
+                <h4 class="text-sm font-semibold">Statistik Harga Kopi Lampung</h4>
+                <p class="text-xs text-gray-500">Last Update: 30-03-2025</p>
+                <div class="w-full h-[100px]">
+                    <canvas id="priceChartKopi"></canvas>
+                </div>
             </div>
+
+            <div class="bg-white text-[#294B29] p-4 rounded-md">
+                <h4 class="text-sm font-semibold">Statistik Harga Lada</h4>
+                <p class="text-xs text-gray-500">Last Update: 30-03-2025</p>
+                <div class="w-full h-[100px]">
+                    <canvas id="priceChartLada"></canvas>
+                </div>
+            </div>
+
+            <button class="bg-[#39731B] text-white px-4 py-2 rounded-full text-sm mt-4 hover:bg-[#14491F] transition">
+                Lihat semua statistik
+            </button>
         </div>
     </section>
 
+
+    <!-- Tabs dan Artikel -->
     <section class="bg-[#F3FBEF] px-6 py-8">
         <!-- Tabs -->
         <div class="flex space-x-4 mb-6 text-sm font-semibold">
@@ -154,14 +175,86 @@
         </div>
 
         <!-- Tombol Lihat Semua -->
-        <div class="mt-8 flex justify-center">
+        <div class="mt-8 flex justify-left">
             <button
-                class="bg-[#1D592D] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#14491F] transition">
+                class="bg-[#39731B] px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#14491F] transition text-[#DBE7C9]">
                 Lihat semua artikel
             </button>
         </div>
     </section>
+    <x-footer />
 
-   <x-footer/>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to create price charts
+            function createPriceChart(canvasId, thisWeekData, lastWeekData, minY, maxY, stepSize) {
+                const ctx = document.getElementById(canvasId).getContext('2d');
+                return new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
+                        datasets: [{
+                                label: 'Minggu Ini',
+                                data: thisWeekData,
+                                borderColor: '#2c5324',
+                                backgroundColor: 'rgba(44, 83, 36, 0.1)',
+                                borderWidth: 2,
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Minggu Lalu',
+                                data: lastWeekData,
+                                borderColor: '#8ba663',
+                                backgroundColor: 'rgba(139, 166, 99, 0.1)',
+                                borderWidth: 2,
+                                borderDash: [5, 5],
+                                tension: 0.4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                min: minY,
+                                max: maxY,
+                                ticks: {
+                                    stepSize: stepSize
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Rp (ribu)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Data untuk Kopi
+            const chartKopi = createPriceChart(
+                'priceChartKopi',
+                [85.0, 86.0, 87.0, 88.0, 89.0, 88.0, 87.0], // Minggu Ini
+                [83.0, 84.0, 85.0, 86.0, 87.0, 86.0, 85.0], // Minggu Lalu
+                82, 90, 2
+            );
+
+            // Data untuk Lada (contoh data, sesuaikan jika sudah punya data asli)
+            const chartLada = createPriceChart(
+                'priceChartLada',
+                [75.0, 76.5, 77.0, 78.0, 77.5, 76.0, 75.0], // Minggu Ini
+                [73.0, 74.0, 75.0, 76.0, 75.5, 74.5, 74.0], // Minggu Lalu
+                72, 80, 2
+            );
+        });
+    </script>
+
 </body>
 </html>

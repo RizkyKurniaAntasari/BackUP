@@ -26,7 +26,7 @@
         {{-- CONTENT --}}
         <div class="max-w-3xl mx-auto space-y-4 min-h-[400px] ">
             <!-- SEJARAH -->
-            <div class="bg-green-800 text-white rounded shadow mt-10">
+            <div class="bg-[#294B2D] text-white rounded shadow mt-10">
                 <button onclick="toggleContent('sejarah', this)"
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">›</span> SEJARAH ORGANISASI
@@ -55,7 +55,7 @@
             </div>
 
             <!-- VISI -->
-            <div class="bg-green-800 text-white rounded shadow">
+            <div class="bg-[#294B2D] text-white rounded shadow">
                 <button onclick="toggleContent('visi', this)"
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">›</span> VISI DAN MISI ORGANISASI
@@ -81,7 +81,7 @@
             </div>
 
             <!-- TUGAS -->
-            <div class="bg-green-800 text-white rounded shadow">
+            <div class="bg-[#294B2D] text-white rounded shadow">
                 <button onclick="toggleContent('tugas', this)"
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">›</span> TUGAS DAN FUNGSI ORGANISASI
@@ -117,7 +117,7 @@
             </div>
 
             <!-- Struktur Organisasi -->
-            <div class="bg-green-800 text-white rounded shadow">
+            <div class="bg-[#294B2D] text-white rounded shadow">
                 <button onclick="toggleContent('struktur', this)"
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">›</span> STRUKTUR ORGANISASI
@@ -136,7 +136,7 @@
         </div>
 
         {{-- FOOTER  --}}
-        <footer class="bg-green-900 text-white px-6 py-6 mt-12">
+        <footer class="bg-[#294B2D] text-white px-6 py-6 mt-12">
             <div class="flex flex-col md:flex-row justify-between text-sm">
                 <div class="mb-4 md:mb-0">
                     <img src="\img\logo-simapan.png" class="w-32 mb-2" alt="SIMAPAN Logo">

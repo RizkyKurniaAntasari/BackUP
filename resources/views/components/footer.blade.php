@@ -18,7 +18,7 @@
     </div>
 </footer> --}}
 
-<footer class="bg-green-900 text-white px-6 py-6">
+<footer class="bg-[#294B2D] text-white px-6 py-6">
     <div class="flex flex-col md:flex-row justify-between text-sm">
         <div class="mb-4 md:mb-0">
             <img src="\img\logo-simapan.png" class="w-32 mb-2" alt="SIMAPAN Logo">

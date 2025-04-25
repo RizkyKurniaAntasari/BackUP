@@ -54,3 +54,4 @@ Route::get('profile', [AuthController::class, 'profile'])->name('profile');
 Route::get('pengaduan', [AuthController::class, 'pengaduan'])->name('pengaduan');
 Route::get('pengumuman', [AuthController::class, 'pengumuman'])->name('pengumuman');
 Route::get('statistik', [AuthController::class, 'statistik'])->name('statistik');
+Route::get('penyuluhan', [AuthController::class, 'penyuluhan'])->name('penyuluhan');
