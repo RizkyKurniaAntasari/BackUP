@@ -20,7 +20,7 @@
 
             <!-- NAMA -->
             <div class="grid grid-cols-4 gap-4 items-center">
-                <label for="nama" class="font-bold text-green-900 col-span-1">Nama</label>
+                <label for="nama" class="pl-36 font-bold text-green-900 col-span-1">Nama</label>
                 <input type="text" id="nama" name="nama" placeholder="Nama Anda" required
                     class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white placeholder-white focus:outline-none"
                     value="{{ old('nama') }}">
@@ -31,7 +31,7 @@
 
             <!-- ALAMAT -->
             <div class="grid grid-cols-4 gap-4 items-center">
-                <label for="alamat" class="font-bold text-green-900 col-span-1">Alamat</label>
+                <label for="alamat" class="pl-36 font-bold text-green-900 col-span-1">Alamat</label>
                 <input type="text" id="alamat" name="alamat" placeholder="Alamat Anda" required
                     class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white placeholder-white focus:outline-none"
                     value="{{ old('alamat') }}">
@@ -42,7 +42,7 @@
 
             <!-- NIK -->
             <div class="grid grid-cols-4 gap-4 items-center">
-                <label for="nik" class="font-bold text-green-900 col-span-1">NIK</label>
+                <label for="nik" class="pl-36 font-bold text-green-900 col-span-1">NIK</label>
                 <input type="text" id="nik" name="nik" placeholder="Nomor Induk Kependudukan" required
                     class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white placeholder-white focus:outline-none"
                     value="{{ old('nik') }}">
@@ -52,7 +52,7 @@
             </div>
 
             <div class="grid grid-cols-4 gap-4 items-center">
-                <label for="jenis_subsidi" class="font-bold text-green-900 col-span-1">Jenis Subsidi</label>
+                <label for="jenis_subsidi" class="pl-36 font-bold text-green-900 col-span-1">Jenis Subsidi</label>
                 <div class="col-span-3 relative">
                     <select id="jenis_subsidi" name="jenis_subsidi"
                         class="w-full p-3 rounded bg-[#294B29] opacity-50 text-white appearance-none focus:outline-none">
@@ -72,7 +72,7 @@
             <div id="pupuk_fields" class="space-y-4 hidden">
                 <!-- Jenis Pupuk -->
                 <div class="grid grid-cols-4 gap-4 items-center">
-                    <label for="jenis_pupuk" class="font-bold text-green-900 col-span-1">Jenis Pupuk</label>
+                    <label for="jenis_pupuk" class="pl-36 font-bold text-green-900 col-span-1">Jenis Pupuk</label>
                     <div class="col-span-3 relative">
                         <select id="jenis_pupuk" name="jenis_pupuk"
                             class="w-full p-3 rounded bg-[#294B29] opacity-50 text-white appearance-none focus:outline-none">
@@ -92,7 +92,7 @@
             
                 <!-- Volume Pupuk -->
                 <div class="grid grid-cols-4 gap-4 items-center">
-                    <label for="volume_pupuk" class="font-bold text-green-900 col-span-1">Volume Pupuk</label>
+                    <label for="volume_pupuk" class="pl-36 font-bold text-green-900 col-span-1">Volume Pupuk</label>
                     <input type="number" id="volume_pupuk" name="volume_pupuk"
                         placeholder="Masukkan volume (kg/liter)"
                         class="col-span-3 p-3 rounded bg-[#294B29] opacity-50 text-white placeholder-white focus:outline-none">

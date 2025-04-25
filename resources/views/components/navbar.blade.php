@@ -5,7 +5,7 @@
     <!-- Kiri: Logo + Nama -->
     <div class="flex items-center space-x-4">
         <!-- Logo (bisa diganti gambar) -->
-        <img src="\img\logo-simapan.png" class="w-36 object-contain" />
+        <img src="/img/logo-simapan.png" class="w-36 object-contain" />
         <div class="text-base font-bold border-l-2 border-[#143D1E] text-gray-700">
             <p class="pl-4">Sistem Informasi Manajemen Pertanian<br />Kabupaten Lampung Barat</p>
         </div>
@@ -14,14 +14,15 @@
     <!-- Kanan: Sosmed + Search + Button -->
     <div class="flex items-center space-x-4">
         <!-- Ikon sosmed -->
-        <div class="flex space-x-2 text-[#143D1E] text-xl">
+        <div class="flex space-x-4 text-[#143D1E] text-xl">
             {{-- <a href="https://instagram.com"><img src="\img\ig-rev.png" class="w-10 pt-1"></a>
             <a href="https://x.com"><img src="\img\x-rev.png" class="w-10"></a> --}}
-            <a href="#" class=""><i class="fab fa-instagram"></i></a>
-            <a href="#" class=""><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class=""><i class="fab fa-youtube"></i></a>
-            <a href="#" class=""><i class="fab fa-x"></i></a>
-            <a href="#" class=""><i class="fab fa-tiktok"></i></a>
+            <img src="{{ asset('icon/instagram.png') }}" class="w-6">
+            <img src="{{ asset('icon/facebook.png') }}" class="w-6">
+            <img src="{{ asset('icon/youtube.png') }}" class="w-8">
+            <img src="{{ asset('icon/x.png') }}" class="w-6">
+            <img src="{{ asset('icon/tiktok.png') }}" class="w-6">
+            
         </div>
 
         <!-- Search -->

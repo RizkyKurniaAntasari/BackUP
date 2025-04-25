@@ -3,7 +3,7 @@
     <!-- Kiri: Logo + Nama -->
     <div class="flex items-center space-x-4">
         <!-- Logo (bisa diganti gambar) -->
-        <img src="\img\logo-simapan.png" class="w-36 object-contain" />
+        <img src="img/logo-simapan.png" class="w-36 object-contain" />
         <div class="text-base font-bold border-l-2 border-[#143D1E] text-gray-700">
             <p class="pl-4">Sistem Informasi Manajemen Pertanian<br />Kabupaten Lampung Barat</p>
         </div>
