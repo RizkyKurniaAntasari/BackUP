@@ -106,7 +106,14 @@ class AuthController extends Controller
         }
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
-    
+    // <=============================== [ P E N Y U L U H A N] ===============================>
+    public function statistik()
+    {
+        if(Auth::check()){
+            return view('penyuluhan');
+        }
+        return redirect("login")->withSuccess('Opps! You do not have access');
+    }
 
 
     public function create(array $data)
