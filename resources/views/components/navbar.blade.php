@@ -44,8 +44,8 @@
         <li><a href="{{ route('profile') }}" class=" m-5 hover:text-yellow-400">PROFIL</a></li>
         <li><a href="{{ route('statistik') }}" class="  m-5 hover:text-yellow-400">STATISTIK</a></li>
         <li><a href="{{ route('users.artikel') }}" class="  m-5 hover:text-yellow-400">ARTIKEL</a></li>
-        <li><a href="{{ route('pengumuman') }}" class="m-5 hover:text-yellow-400">PENGUMUMAN</a></li>
-        <li><a href="{{ route('penyuluhan') }}" class="  m-5 hover:text-yellow-400">PENYULUHAN</a></li>
+        <li><a href="{{ route('users.pengumuman') }}" class="m-5 hover:text-yellow-400">PENGUMUMAN</a></li>
+        <li><a href="{{ route('users.penyuluhan') }}" class="  m-5 hover:text-yellow-400">PENYULUHAN</a></li>
         <li><a href="{{ route('pengaduan') }}" class=" m-5 hover:text-yellow-400">PENGADUAN</a></li>
         <li><a href="{{ route('pengajuan_subsidi') }}" class=" m-5 hover:text-yellow-400">SUBSIDI</a></li>
     </ul>

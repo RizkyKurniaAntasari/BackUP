@@ -52,10 +52,11 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard'); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get( '/users/pengumuman',[UsersController::class, 'pengumuman'])->name('users.pengumuman');
+Route::get('/users/penyuluhan',[UsersController::class,'penyuluhan'])->name('users.penyuluhan');
+
 Route::get('profile', [AuthController::class, 'profile'])->name('profile');
-Route::get('pengumuman', [AuthController::class, 'pengumuman'])->name('pengumuman');
 Route::get('statistik', [AuthController::class, 'statistik'])->name('statistik');
-Route::get('penyuluhan', [AuthController::class, 'penyuluhan'])->name('penyuluhan');
 
 //Route::get('pengaduan', [AuthController::class, 'pengaduan'])->name('pengaduan');
 
@@ -66,9 +67,9 @@ Route::post('/simpan',[DataPengaduanController::class, 'simpan'])->name('simpan.
 // Route Arttikel
 Route::get('/users/artikel',[UsersController::class, 'artikel'])->name("users.artikel");
 
-Route::get('users/temp_artikel', function(){
-    return view('users.temp_artikel');
-});
+// Route::get('users/temp_artikel', function(){
+//     return view('users.temp_artikel');
+// });
 
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
 
