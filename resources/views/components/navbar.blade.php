@@ -23,15 +23,6 @@
 
         </div>
 
-        <!-- Search -->
-        <div class="relative">
-            <input type="text" placeholder="Cari disini"
-                class="pl-8 pr-3 py-1.5 border rounded-full text-sm outline-none focus:ring-2 focus:ring-green-700" />
-            <span class="absolute left-2 top-1.5 text-gray-400">
-                <i class="fas fa-search"></i>
-            </span>
-        </div>
-
         <!-- Sign In atau Avatar -->
         @guest
             <button class="bg-[#143D1E] text-white px-4 py-1.5 rounded-full text-sm hover:bg-green-900">
@@ -47,15 +38,15 @@
 </header>
 
 <!-- Navbar Menu -->
-<nav class="bg-[#143D1E] text-white px-6 py-4 font-poppins">
+<nav class="bg-[#294B2D] text-white px-6 py-4 font-poppins">
     <ul class="flex space-x-6 text-sm font-medium justify-center">
-        <li><a href="dashboard" class="hover:text-yellow-400 m-5">BERANDA</a></li>
+        <li><a href="{{ route('dashboard') }}" class="hover:text-yellow-400 m-5">BERANDA</a></li>
         <li><a href="{{ route('profile') }}" class=" m-5 hover:text-yellow-400">PROFIL</a></li>
-        <li><a href="statistik" class="  m-5 hover:text-yellow-400">STATISTIK</a></li>
+        <li><a href="{{ route('statistik') }}" class="  m-5 hover:text-yellow-400">STATISTIK</a></li>
         <li><a href="{{ route('users.artikel') }}" class="  m-5 hover:text-yellow-400">ARTIKEL</a></li>
-        <li><a href="pengumuman" class="m-5 hover:text-yellow-400">PENGUMUMAN</a></li>
-        <li><a href="penyuluhan" class="  m-5 hover:text-yellow-400">PENYULUHAN</a></li>
-        <li><a href="pengaduan" class=" m-5 hover:text-yellow-400">PENGADUAN</a></li>
-        <li><a href="pengajuan_subsidi" class=" m-5 hover:text-yellow-400">SUBSIDI</a></li>
+        <li><a href="{{ route('pengumuman') }}" class="m-5 hover:text-yellow-400">PENGUMUMAN</a></li>
+        <li><a href="{{ route('penyuluhan') }}" class="  m-5 hover:text-yellow-400">PENYULUHAN</a></li>
+        <li><a href="{{ route('pengaduan') }}" class=" m-5 hover:text-yellow-400">PENGADUAN</a></li>
+        <li><a href="{{ route('pengajuan_subsidi') }}" class=" m-5 hover:text-yellow-400">SUBSIDI</a></li>
     </ul>
 </nav>
