@@ -15,7 +15,7 @@
     @include('components.navbar')
 
     <!-- MAIN CONTENT -->
-    <div class="flex px-6 py-8 space-x-8">
+    <div class="flex px-6 space-x-8">
         <!-- Yield untuk konten utama -->
         @yield('content')
     </div>

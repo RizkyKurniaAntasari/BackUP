@@ -108,6 +108,7 @@
                 text: '{{ session('success') }}',
                 icon: 'success',
                 confirmButtonText: 'OK'
+                draggable: true
             });
         @endif
     </script>

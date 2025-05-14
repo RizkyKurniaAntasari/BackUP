@@ -22,4 +22,15 @@ class UsersController extends Controller
     {
         return view('users.penyuluhan');
     }
+    // <=============================== [ P R O F I L E ] ===============================>
+    public function profile()
+    {
+            return view('profile');   
+    }
+    // <=============================== [ S T A T I S T I K] ===============================>
+    public function statistik()
+    {
+            return view('statistik');
+        
+    }
 }

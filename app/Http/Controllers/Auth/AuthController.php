@@ -94,15 +94,4 @@ class AuthController extends Controller
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
 
-    // <=============================== [ P R O F I L E ] ===============================>
-    public function profile()
-    {
-            return view('profile');   
-    }
-    // <=============================== [ S T A T I S T I K] ===============================>
-    public function statistik()
-    {
-            return view('statistik');
-        
-    }
 }
