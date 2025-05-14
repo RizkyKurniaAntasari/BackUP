@@ -18,7 +18,7 @@
         <div class="hidden md:flex space-x-3 text-[#143D1E] text-xl">
             <img src="{{ asset('icon/instagram.png') }}" class="w-5 md:w-6">
             <img src="{{ asset('icon/facebook.png') }}" class="w-5 md:w-6">
-            <img src="{{ asset('icon/youtube.png') }}" class="w-6 md:w-8">
+            <img src="{{ asset('icon/youtube.png') }}" class="w-5 md:w-8">
             <img src="{{ asset('icon/x.png') }}" class="w-5 md:w-6">
             <img src="{{ asset('icon/tiktok.png') }}" class="w-5 md:w-6">
         </div>

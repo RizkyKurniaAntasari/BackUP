@@ -6,7 +6,9 @@ use App\Http\Controllers\SubsidiController;
 use App\Http\Controllers\DataPengaduanController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\PetugasController;
 use App\Models\DataArtikel;
+use App\Models\Petugas;
 use App\Models\Subsidi;
 use App\Models\DataPengaduan;
 
@@ -15,6 +17,7 @@ use App\Models\DataPengaduan;
 | Dashboard
 |--------------------------------------------------------------------------
 */
+
 Route::get('/', function () {
     return view('dashboard'); // sebelumnya welcome
 });
@@ -71,27 +74,21 @@ Route::post('admin/a_create_artikel', [ArtikelController::class, 'store'])->name
 
 /*
 |--------------------------------------------------------------------------
-| Petugas Views (Tanpa Controller)
+| PetugasController
 |--------------------------------------------------------------------------
 */
-Route::get('/petugas/p_login', function () {
-    return view('petugas.p_login');
-});
-Route::get('/petugas/p_dashboard', function () {
-    return view('petugas.p_dashboard');
-});
-Route::get('/petugas/p_datadinas', function () {
-    return view('petugas.p_datadinas');
-})->name('petugas.datadinas');
-
-Route::get('/petugas/p_pengaduan', function () {
-    $data_pengaduan = DataPengaduan::all();
-    return view('petugas.p_pengaduan', compact('data_pengaduan'));
-});
-Route::get('/petugas/p_subsidi', function () {
-    $subsidi = Subsidi::all();
-    return view('petugas.p_subsidi', compact('subsidi'));
-});
-Route::get('/petugas/p_pengaturan', function () {
-    return view('petugas.p_pengaturan');
+Route::prefix('petugas')->group(function() {
+    // Auth Routes
+    Route::get('p_login', [PetugasController::class, 'showLoginForm'])->name('petugas.p_login');
+    Route::post('p_login', [PetugasController::class, 'login'])->name('petugas.login.submit');
+    Route::post('logout', [PetugasController::class, 'logout'])->name('petugas.logout');
+    
+    // Authenticated Routes
+    Route::middleware(['auth:petugas'])->group(function() {
+        Route::get('p_dashboard', [PetugasController::class, 'dashboard'])->name('petugas.p_dashboard');
+        Route::get('p_datadinas', [PetugasController::class, 'datadinas'])->name('petugas.datadinas');
+        Route::get('p_pengaduan', [PetugasController::class, 'pengaduan'])->name('petugas.p_pengaduan');
+        Route::get('p_subsidi', [PetugasController::class, 'subsidi'])->name('petugas.p_subsidi');
+        Route::get('p_pengaturan', [PetugasController::class, 'pengaturan'])->name('petugas.p_pengaturan');
+    });
 });
