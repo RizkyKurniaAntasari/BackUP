@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SIMAPAN - Dashboard</title>
+    <title>SIMAPAN - Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script>
@@ -21,7 +21,7 @@
         }
     </script>
 </head>
-<body class="bg-green-100 font-poppins">
+<body class="bg-[#DBE7C9] font-poppins">
         <x-navbar />
         {{-- CONTENT --}}
         <div class="max-w-3xl mx-auto space-y-4 min-h-[400px] ">
@@ -31,7 +31,7 @@
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">></span> SEJARAH ORGANISASI
                 </button>
-                <div id="sejarah" class="bg-green-100 text-green-900 px-6 py-4 hidden text-justify">
+                <div id="sejarah" class="bg-[#DBE7C9] text-[#294B29] px-6 py-4 hidden text-justify border border-green-900 rounded-b">
                     <p>
                         Sejarah Dinas Pertanian Kabupaten Lampung Barat berawal dari pembentukan Kabupaten Lampung Barat
                         itu
@@ -60,7 +60,7 @@
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">></span> VISI DAN MISI ORGANISASI
                 </button>
-                <div id="visi" class="bg-green-100 text-green-900 px-6 py-4 hidden text-justify">
+                <div id="visi" class="bg-[#DBE7C9] text-[#294B29] px-6 py-4 hidden text-justify border border-green-900 rounded-b">
                     <p class="font-bold">
                         VISI
                     </p>
@@ -86,7 +86,7 @@
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">></span> TUGAS DAN FUNGSI ORGANISASI
                 </button>
-                <div id="tugas" class="bg-green-100 text-green-900 px-6 py-4 hidden text-justify">
+                <div id="tugas" class="bg-[#DBE7C9] text-[#294B29] px-6 py-4 hidden text-justify border border-green-900 rounded-b">
                     <p>
                         Dasar Hukum pembentukan Dinas Tanaman Pangan dan Hortikultura Kabupaten Lampung Barat adalah
                         Peraturan Daerah Kabupaten Lampung Barat Nomor 4 Tahun 2023 tentang Perubahan Kedua Atas
@@ -122,7 +122,7 @@
                     class="w-full text-left px-6 py-4 font-bold flex items-center gap-2">
                     <span class="icon">></span> STRUKTUR ORGANISASI
                 </button>
-                <div id="struktur" class="bg-green-100 text-green-900 px-6 py-4 hidden text-justify">
+                <div id="struktur" class="bg-[#DBE7C9] text-[#294B29] px-6 py-4 hidden text-justify border border-green-900 rounded-b">
                     <P>
                         Dalam melaksanakan tugas dan kewajiban Dinas dipimpin oleh Kepala Dinas yang dalam pelaksanaan
                         tugasnya dibantu oleh pejabat struktural dan pejabat fungsional sebagaimana terdapat dalam

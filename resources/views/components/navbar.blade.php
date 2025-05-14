@@ -1,7 +1,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <!-- HEADER ATAS -->
-<header class="bg-[#D6E6C5] px-4 py-3 flex items-center justify-between font-poppins">
+<header class="bg-[#DBE7C9] px-4 py-3 flex items-center justify-between font-poppins">
     <!-- Kiri: Logo + Nama -->
     <div class="flex items-center space-x-4">
         <img src="/img/logo-simapan.png" class="w-24 md:w-36 object-contain" />
