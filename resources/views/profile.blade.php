@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <title>SIMAPAN - Profile</title>
@@ -21,10 +20,11 @@
         }
     </script>
 </head>
-<body class="bg-[#DBE7C9] font-poppins">
-        <x-navbar />
+<body class="bg-[#DBE7C9] font-poppins flex flex-col min-h-screen">
+    <div class="flex-1">
+       @include('components.navbar')
         {{-- CONTENT --}}
-        <div class="max-w-3xl mx-auto space-y-4 min-h-[400px] ">
+        <div class="max-w-3xl mx-auto space-y-4 py-10 min-h-[500px]">
             <!-- SEJARAH -->
             <div class="bg-[#294B2D] text-white rounded shadow mt-10">
                 <button onclick="toggleContent('sejarah', this)"
@@ -134,25 +134,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- FOOTER  --}}
-        <footer class="bg-[#294B2D] text-white px-6 py-6 mt-12">
-            <div class="flex flex-col md:flex-row justify-between text-sm">
-                <div class="mb-4 md:mb-0">
-                    <img src="\img\logo-simapan.png" class="w-32 mb-2" alt="SIMAPAN Logo">
-                    <p>Sistem Informasi Manajemen Pertanian Kabupaten Lampung Barat</p>
-                    <p class="mt-2 text-xs">© Copyright 2025. Kelompok Lincari - Jurusan Ilmu Komputer, Universitas
-                        Lampung
-                    </p>
-                </div>
-                <div>
-                    <p>Kantor Dinas Pertanian Kab. Lambar</p>
-                    <p>Jl. Raden Intan, Way Mengaku, Komp. Perkantoran Pemkab Lampung Barat, Liwa, Lampung, 34842</p>
-                    <p>📞 Telp: 1234-5678-910</p>
-                    <p>📱 WhatsApp: 0812-3456-7890</p>
-                    <p>📧 Email: dinaspertanianlambar@gmail.com</p>
-                </div>
-            </div>
-        </footer>
+    </div>
+        @include('components.footer')
 </body>
 </html>

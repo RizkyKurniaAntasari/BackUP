@@ -29,15 +29,15 @@
             <p class="opacity-95">Jl. Raden Intan, Way Mengaku, Komp. Perkantoran <br> Pemkab Lampung Barat, Liwa, Lampung, 34842</p>
             <table class="mt-2 border-spacing-x-2 border-separate" >
                 <tr>
-                    <td><img src="{{asset('icon/telepon_putih.png')}}" class="w-5 h-5 md:w-7 md:h-7 object-contain" alt="telepon logo"></td>
+                    <td><img src="{{asset('icon/telepon_putih.png')}}" class="w-5 h-5 md:w-6 md:h-6 object-contain" alt="telepon logo"></td>
                     <td class="opacity-95 mt-2">Telp: 1234-5678-910</td>
                 </tr>
                 <tr>
-                    <td><img src="{{ asset('icon/whatsapp_putih.png') }}" class="w-5 h-5 md:w-7 md:h-7 object-contain" alt="telepon logo"></td>
+                    <td><img src="{{ asset('icon/whatsapp_putih.png') }}" class="w-5 h-5 md:w-6 md:h-6 object-contain" alt="telepon logo"></td>
                     <td class="opacity-95">WhatsApp: 0812-3456-7890</td>
                 </tr>
                 <tr>
-                    <td><img src="{{ asset('icon/email_putih.png') }}" class="w-5 h-5 md:w-7 md:h-7 object-contain" alt="telepon logo"></td>
+                    <td><img src="{{ asset('icon/email_putih.png') }}" class="w-5 h-5 md:w-6 md:h-6 object-contain" alt="telepon logo"></td>
                     <td class="opacity-95">Email: dinaspertanianlambar@gmail.com</td>
                 </tr>
             </table>
