@@ -73,7 +73,6 @@ class AuthController extends Controller
         ]);
     }
 
-
     public function logout(): RedirectResponse
     {
         Session::flush();
@@ -85,13 +84,7 @@ class AuthController extends Controller
     // <=============================== [D A S H B O A R D] ===============================>
     public function dashboard()
     {
-        if (Auth::check()) {
-            return view('dashboard');
-        }else{
-            return view('dashboard');
-            
-        }
-        return redirect("login")->withSuccess('Opps! You do not have access');
+        return view('dashboard');
     }
 
 }
