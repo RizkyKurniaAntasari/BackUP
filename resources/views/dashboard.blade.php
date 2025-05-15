@@ -15,9 +15,9 @@
     </style>
 </head>
 
-<body class="bg-green-100 font-poppins">
+<body class="bg-[#DBE7C9] font-poppins">
 
-    <x-navbar />
+    @include('components.navbar')
     <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-[#DBE7C9]">
         <img src="{{ asset('icon/beranda_sayur.png') }}" alt=""
             class="rounded-md hover:scale-105 transition w-full h-full object-cover" />
@@ -37,45 +37,54 @@
 
 
     <!-- Artikel + Statistik -->
-    <section class="grid md:grid-cols-[2fr_1fr] bg-[#294B29] text-white px-6 py-8 gap-6">
-        <div class="flex flex-col md:flex-row gap-4">
-            <div class="md:w-1/2">
-                <h3 class="text-lg font-bold">
-                    PERAN ARTIFICIAL INTELLIGENCE (AI) DALAM MEMPREDIKSI HAMA DAN PENYAKIT PADA TANAMAN SAYURAN
-                </h3>
-                <p class="text-xs my-2">23 Maret 2025</p>
-                <p class="text-sm text-justify">
+    <section class="grid md:grid-cols-[3fr_2fr] bg-[#294B29] text-white px-20 py-8">
+        <div class="flex flex-col mr-4">
+            <div class="md:w-full flex-wrap">
+
+                <div class="inline-grid grid-cols-2 gap-4 mb-5">
+                    <div class="grid=row">
+                        <h3 class="text-3xl font-bold">
+                            PERAN ARTIFICIAL <br> INTELLIGENCE (AI) <br> DALAM MEMPREDIKSI <br> HAMA DAN PENYAKIT <br> PADA TANAMAN <br> SAYURAN
+                        </h3>
+                        <p class="text-xs my-2 opacity-60">23 Maret 2025</p>
+                    </div>
+                    <img src="{{ asset('icon/beranda_sayur_artikel.png') }}" alt="AI" class="w-full rounded-md object-cover" />
+                </div>
+                <p class="text-base text-justify">
                     Lampung barat - Dalam dunia pertanian modern, keberlanjutan produksi sayuran sering kali menghadapi
                     tantangan besar akibat serangan hama dan penyakit. Jika tidak ditangani dengan baik, serangan ini
                     dapat menyebabkan penurunan hasil panen yang signifikan dan berdampak pada ketahanan pangan serta
                     ekonomi petani. Namun, dengan kemajuan Artificial Intelligence (AI), kini petani dapat memanfaatkan
                     teknologi untuk memprediksi dan mengendalikan hama serta penyakit secara lebih cepat dan akurat.
                 </p>
+                <br>
+                <p class="text-base text-justify">
+                    AI bekerja dengan cara mengumpulkan dan menganalisis data dari berbagai sumber, seperti citra satelit,
+                    sensor cuaca, foto tanaman, dan data historis tentang serangan hama atau penyakit.
+                </p>
                 <button
                     class="bg-[#39731B] text-[#DBE7C9] rounded-full px-4 py-2 mt-4 font-semibold text-sm hover:bg-[#14491F] ">Selengkapnya</button>
             </div>
-            <img src="{{ asset('icon/beranda_sayur_artikel.png') }}" alt="AI"
-                class="w-full md:w-1/2 rounded-md object-cover" />
         </div>
 
-        <div class="space-y-4">
-            <div class="bg-white text-[#294B29] p-4 rounded-md">
+        <div class="space-y-4 mx-4">
+            <div class="bg-white text-[#294B29] p-6 rounded-md">
                 <h4 class="text-sm font-semibold">Statistik Harga Kopi Lampung</h4>
                 <p class="text-xs text-gray-500">Last Update: 30-03-2025</p>
-                <div class="w-full h-[100px]">
+                <div class="w-full">
                     <canvas id="priceChartKopi"></canvas>
                 </div>
             </div>
 
-            <div class="bg-white text-[#294B29] p-4 rounded-md">
+            <div class="bg-white text-[#294B29] p-6 rounded-md">
                 <h4 class="text-sm font-semibold">Statistik Harga Lada</h4>
                 <p class="text-xs text-gray-500">Last Update: 30-03-2025</p>
-                <div class="w-full h-[100px]">
+                <div class="w-full">
                     <canvas id="priceChartLada"></canvas>
                 </div>
             </div>
 
-            <button class="bg-[#39731B] text-white px-4 py-2 rounded-full text-sm mt-4 hover:bg-[#14491F] transition">
+            <button class="bg-[#39731B] text-[#DBE7C9]  px-4 py-2 font-semibold rounded-full text-sm mt-4 hover:bg-[#14491F] transition">
                 <a href="{{ route('statistik') }}">Lihat semua statistik</a>
             </button>
         </div>
@@ -83,7 +92,7 @@
 
 
     <!-- Tabs dan Artikel -->
-    <section class="bg-[#F3FBEF] px-6 py-8">
+    <section class="bg-[#F3FBEF] px-20 py-8">
         <!-- Tabs -->
         <div class="flex space-x-4 mb-6 text-sm font-semibold">
             <button class="bg-[#143D1E] text-white px-4 py-2 rounded-full">Artikel</button>
@@ -177,12 +186,13 @@
         <!-- Tombol Lihat Semua -->
         <div class="mt-8 flex justify-left">
             <button
-                class="bg-[#39731B] px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#14491F] transition text-[#DBE7C9]">
+                class="bg-[#39731B] px-4 py-3 rounded-full text-sm font-semibold hover:bg-[#14491F] transition text-[#DBE7C9]">
                 <a href="{{ route('users.artikel') }}">Lihat semua artikel</a>
             </button>
         </div>
     </section>
-    <x-footer />
+    
+    @include('components.footer')
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

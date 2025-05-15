@@ -68,7 +68,11 @@
      </a>
      
     </nav>
-    <button class="text-white flex items-center ml-5 mt-10">
-        <span><img src="{{ asset(Request::is('petugas/p_pengaturan*') ? 'icon/keluar_admin.png' : 'icon/keluar_admin.png') }}" class="w-5"></span><span class="ml-2">KELUAR</span>
-    </button>
+    <form action="{{ route('petugas.logout') }}" method="POST" class="flex items-center ml-10 mt-10">
+        @csrf
+        <button type="submit" class="flex items-center text-white">
+            <img src="{{ asset(Request::is('petugas/p_pengaturan*') ? 'icon/keluar_admin.png' : 'icon/keluar_admin.png') }}" class="w-5 mr-2">
+            <span>KELUAR</span>
+        </button>
+    </form>
 </aside>
