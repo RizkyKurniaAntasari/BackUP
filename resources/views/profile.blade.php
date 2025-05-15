@@ -1,3 +1,4 @@
+{{-- resources\views\profile.blade.php --}}
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -130,7 +131,7 @@
                         organisasi di bawah ini:
                     </P>
 
-                    <img class="ml-10" src="\img\struktur_organisasi.png" alt="">
+                    <img src="\img\struktur_organisasi.png" alt="">
                 </div>
             </div>
         </div>
