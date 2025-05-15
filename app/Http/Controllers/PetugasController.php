@@ -133,4 +133,9 @@ class PetugasController extends Controller
     {
         return view('petugas.p_pengaturan');
     }
+
+    public function informasiPertanian()
+    {
+        return view('petugas.p_informasiPertanian');
+    }
 }
