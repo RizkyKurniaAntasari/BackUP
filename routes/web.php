@@ -89,7 +89,7 @@ Route::prefix('petugas')->group(function() {
         Route::get('p_pengaduan', [PetugasController::class, 'pengaduan'])->name('petugas.p_pengaduan');
         Route::get('p_subsidi', [PetugasController::class, 'subsidi'])->name('petugas.p_subsidi');
         Route::get('p_datadinas', [PetugasController::class, 'datadinas'])->name('petugas.datadinas');
-
+        Route::get('p_updateHarga', [PetugasController::class, 'updateHarga'])->name('petugas.p_updateHarga');
         Route::get('p_informasiPertanian', [PetugasController::class, 'informasiPertanian'])->name('petugas.p_informasiPertanian');
         Route::get('p_pengaturan', [PetugasController::class, 'pengaturan'])->name('petugas.p_pengaturan');
     });
