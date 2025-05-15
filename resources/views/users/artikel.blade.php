@@ -56,7 +56,7 @@
 
             <!-- Artikel 1 -->
             <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?coffee" class="rounded w-20 h-20 object-cover" />
+                <img src="https://i.pravatar.cc/40" class="rounded w-20 h-20 object-cover" />
                 <div>
                     <p class="text-xs text-gray-500">23 Maret 2025</p>
                     <p class="font-semibold text-sm text-gray-800">
@@ -69,11 +69,13 @@
 
             <!-- Artikel 2 -->
             <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?vegetable" class="rounded w-20 h-20 object-cover" />
+                <img src="https://i.pravatar.cc/30" class="rounded w-20 h-20 object-cover" />
                 <div>
                     <p class="text-xs text-gray-500">20 Maret 2025</p>
                     <p class="font-semibold text-sm text-gray-800">
-                        Peran Artificial Intelligence (AI) dalam Memprediksi Hama dan Penyakit pada Tanaman Sayuran
+                        <a href="{{ route('artikel.show', ['id' => 2]) }}">
+                            Peran Artificial Intelligence (AI) dalam Memprediksi Hama dan Penyakit pada Tanaman Sayuran
+                        </a>
                     </p>
                 </div>
             </div>

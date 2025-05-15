@@ -78,7 +78,7 @@
                 <div>
                     <p class="text-xs text-gray-500">20 Maret 2025</p>
                     <p class="font-semibold text-sm text-gray-800">
-                        Strategi Pencegahan Penyakit Layu Bakteri pada Tanaman Cabai
+                        <a href="{{ route('artikel.show', ['id' => 1]) }}">Strategi Pencegahan Penyakit Layu Bakteri pada Tanaman Cabai</a>
                     </p>
                 </div>
             </div>

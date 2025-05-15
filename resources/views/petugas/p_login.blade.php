@@ -23,7 +23,7 @@
             <!-- Header -->
             <div class="text-center space-y-2">
                 <h2 class="text-4xl font-bold text-[#294B29]">Welcome, Petugas!</h2>
-                <p class="text-[#294B29] text-sm font-semibold">Please insert your account</p>
+                <p class="text-[#294B29] text-sm font-semibold">Masukkan email dan kata sandi</p>
             </div>
 
             <!-- Alert Error -->
@@ -46,8 +46,8 @@
 
             <!-- Password -->
             <div>
-                <label for="password" class="text-white">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password"
+                <label for="password" class="text-white">Kata Sandi</label>
+                <input type="password" name="password" id="password" placeholder="Kata Sandi"
                     class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-[#294B29]" required>
                 @error('password')
                     <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
