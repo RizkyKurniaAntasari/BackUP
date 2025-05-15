@@ -99,7 +99,7 @@
         document.getElementById('logout-button').addEventListener('click', function() {
             Swal.fire({
                 title: 'Konfirmasi Keluar',
-                text: "Apakah Anda yakin ingin logout?",
+                text: "Apakah Anda yakin ingin keluar?",
                 imageUrl: '{{ asset('icon/keluar.png') }}', // Ganti ini ke ikonmu (jika mau pakai gambar)
                 imageWidth: 80,
                 imageHeight: 80,
@@ -107,7 +107,7 @@
                 showCancelButton: true,
                 confirmButtonColor: '#35860B',
                 cancelButtonColor: '#35860B',
-                confirmButtonText: 'Ya, Logout',
+                confirmButtonText: 'Ya, keluar',
                 cancelButtonText: 'Batal',
                 customClass: {
                     popup: 'rounded-lg shadow-md'
