@@ -76,7 +76,7 @@
 
         {{-- Area Konten (dinamis) --}}
         <div id="tab-content"
-             class="bg-white border text-justify border-[#1B3219] rounded-sm p-4 space-y-3 shadow px-10 min-h-[200px]">
+            class="bg-white border text-justify border-[#1B3219] rounded-sm p-4 space-y-3 shadow px-10 min-h-[200px]">
             <p class="text-center text-gray-500">Memuat konten...</p>
         </div>
 
@@ -96,16 +96,14 @@
                 <label class="block font-semibold mb-2 text-[#1B3219]">
                     Edit Konten: <span id="label-tipe" class="capitalize"></span>
                 </label>
-                <textarea name="konten" id="konten" rows="10"
-                          class="w-full border border-[#1B3219] p-3 rounded text-sm"></textarea>
+                <textarea name="konten" id="konten" rows="10" class="w-full border border-[#1B3219] p-3 rounded text-sm"></textarea>
 
                 <div class="flex justify-end mt-4 space-x-2">
                     <button type="button" id="btn-cancel"
-                            class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+                        class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
                         Batal
                     </button>
-                    <button type="submit"
-                            class="bg-[#1B3219] text-white px-6 py-2 rounded hover:bg-[#2c4c2a]">
+                    <button type="submit" class="bg-[#1B3219] text-white px-6 py-2 rounded hover:bg-[#2c4c2a]">
                         Simpan Perubahan
                     </button>
                 </div>
@@ -125,13 +123,13 @@
 
         // Elemen-elemen utama
         const tabContentDiv = document.getElementById('tab-content');
-        const btnEdit      = document.getElementById('btn-edit');
-        const editFormDiv  = document.getElementById('edit-form');
-        const formKonten   = document.getElementById('form-konten');
+        const btnEdit = document.getElementById('btn-edit');
+        const editFormDiv = document.getElementById('edit-form');
+        const formKonten = document.getElementById('form-konten');
         const textareaKonten = document.getElementById('konten');
-        const inputTipe    = document.getElementById('tipe');
-        const labelTipe    = document.getElementById('label-tipe');
-        let currentTipe    = ''; // Akan menyimpan tipe tab saat ini
+        const inputTipe = document.getElementById('tipe');
+        const labelTipe = document.getElementById('label-tipe');
+        let currentTipe = ''; // Akan menyimpan tipe tab saat ini
 
         /** 
          * Load konten dari server via AJAX (route p_datadinas.menulis).
@@ -152,30 +150,32 @@
 
             // Panggil endpoint menulis (POST) dengan JSON { tipe: tipe }
             fetch("{{ route('p_datadinas.menulis') }}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({ tipe: tipe })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Jika ada konten, tampilkan; kalau kosong, tunjukkan placeholder
-                tabContentDiv.innerHTML = `
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        tipe: tipe
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Jika ada konten, tampilkan; kalau kosong, tunjukkan placeholder
+                    tabContentDiv.innerHTML = `
                     <div class="prose max-w-none">
                         ${data.konten || '<i>(Belum ada konten)</i>'}
                     </div>
                 `;
-                // Masukkan nilai konten ke textarea (tetap tersembunyi sampai klik Edit)
-                textareaKonten.value = data.konten || '';
-                // Munculkan tombol Edit sekarang
-                btnEdit.classList.remove('hidden');
-            })
-            .catch(err => {
-                tabContentDiv.innerHTML = `<p class="text-red-500">Gagal memuat konten.</p>`;
-                console.error(err);
-            });
+                    // Masukkan nilai konten ke textarea (tetap tersembunyi sampai klik Edit)
+                    textareaKonten.value = data.konten || '';
+                    // Munculkan tombol Edit sekarang
+                    btnEdit.classList.remove('hidden');
+                })
+                .catch(err => {
+                    tabContentDiv.innerHTML = `<p class="text-red-500">Gagal memuat konten.</p>`;
+                    console.error(err);
+                });
         }
 
         /** 
@@ -214,7 +214,9 @@
         btnEdit.addEventListener('click', function() {
             editFormDiv.classList.remove('hidden');
             // Scroll ke bawah untuk melihat form jika konten panjang
-            editFormDiv.scrollIntoView({ behavior: 'smooth' });
+            editFormDiv.scrollIntoView({
+                behavior: 'smooth'
+            });
         });
 
         /** 
@@ -233,36 +235,36 @@
         formKonten.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const tipeVal   = inputTipe.value;
+            const tipeVal = inputTipe.value;
             const kontenVal = textareaKonten.value;
 
             fetch("{{ route('p_datadinas.memperbarui') }}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({
-                    tipe: tipeVal,
-                    konten: kontenVal
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        tipe: tipeVal,
+                        konten: kontenVal
+                    })
                 })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Setelah berhasil, reload konten terbaru
-                    loadKonten(tipeVal);
-                    // Optionally, sembunyikan form lagi:
-                    editFormDiv.classList.add('hidden');
-                    alert(data.message);
-                } else {
-                    alert('Gagal menyimpan konten.');
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                alert('Terjadi kesalahan saat menyimpan.');
-            });
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Setelah berhasil, reload konten terbaru
+                        loadKonten(tipeVal);
+                        // Optionally, sembunyikan form lagi:
+                        editFormDiv.classList.add('hidden');
+                        alert(data.message);
+                    } else {
+                        alert('Gagal menyimpan konten.');
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Terjadi kesalahan saat menyimpan.');
+                });
         });
     </script>
 </body>
