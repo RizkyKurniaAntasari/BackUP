@@ -19,11 +19,13 @@ class AuthController extends Controller
      * @return response()
      */
 
-    public function index(): View
+    public function index(): View|RedirectResponse
     {
-        return view('auth.login');
+        if (Auth::check()) {
+            return redirect('/dashboard'); // arahkan ke route dashboard
+        }
+        return view('auth.login'); // kalau belum login, munculkan halaman login
     }
-
 
     public function registration(): View
     {
@@ -75,7 +77,7 @@ class AuthController extends Controller
 
     public function logout(): RedirectResponse
     {
-        Session::flush();
+        //Session::flush();
         Auth::logout();
 
         return Redirect('login');

@@ -73,7 +73,7 @@
                 <div>
                     <p class="text-xs text-gray-500">20 Maret 2025</p>
                     <p class="font-semibold text-sm text-gray-800">
-                        <a href="{{ route('artikel.show', ['id' => 2]) }}">
+                        <a href="{{ route('artikel.show', ['id' => 3]) }}">
                             Peran Artificial Intelligence (AI) dalam Memprediksi Hama dan Penyakit pada Tanaman Sayuran
                         </a>
                     </p>
