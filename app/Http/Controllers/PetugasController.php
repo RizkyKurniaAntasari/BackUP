@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Models\Petugas;
 use App\Models\DataPengaduan;
+use App\Models\KontenStaticPetugas;
 use App\Models\Subsidi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -143,4 +144,41 @@ class PetugasController extends Controller
     {
         return view('petugas.p_updateHarga');
     }
+
+/*
+|--------------------------------------------------------------------------
+| PETUGAS - DATA DINAS - TENTANG PROFILE  (Sejarah,Visi,Tugas,Struktur);
+|--------------------------------------------------------------------------
+*/
+
+ public function menulis(Request $request)
+    {
+        $tipe = $request->tipe;
+        $konten = KontenStaticPetugas::where('tipe', $tipe)->first();
+
+        return response()->json([
+            'konten' => $konten?->konten ?? ''
+        ]);
+    }
+
+    public function memperbarui(Request $request)
+    {
+        $request->validate([
+            'tipe' => 'required|string',
+            'konten' => 'nullable|string'
+        ]);
+
+        KontenStaticPetugas::updateOrCreate(
+            ['tipe' => $request->tipe],
+            ['konten' => $request->konten]
+        );
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Konten berhasil diperbarui.'
+        ]);
+    }
+
+
+
 }
