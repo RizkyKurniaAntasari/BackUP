@@ -53,100 +53,22 @@
 
         <!-- ARTIKEL -->
         <main class="flex-1 bg-[#DBE7C9] rounded-lg p-4 space-y-4">
-
-            <!-- Artikel 1 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://i.pravatar.cc/40" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">23 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        <!-- Link ke halaman artikel dengan parameter id -->
-                        <a href="{{ route('artikel.show', ['id' => 1]) }}">Tren Kopi Spesialti: Meningkatnya Minat
-                            Konsumen terhadap Kopi Berkualitas Tinggi</a>
-                    </p>
+            @foreach ($artikels as $artikel)
+                <div class="flex space-x-4 border-b pb-3">
+                    <img src="{{ asset('img_artikel/' . $artikel->gambar) }}" class="rounded w-20 h-20 object-cover" />
+                    <div>
+                        <p class="text-xs text-gray-500">
+                            {{ \Carbon\Carbon::parse($artikel->created_at)->translatedFormat('d F Y') }}</p>
+                        <p class="font-semibold text-sm text-[#294B29]">
+                            <a href="{{ route('artikel.show', ['id' => $artikel->id]) }}">
+                                {{ $artikel->judul }}
+                            </a>
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Artikel 2 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://i.pravatar.cc/30" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">20 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        <a href="{{ route('artikel.show', ['id' => 3]) }}">
-                            Peran Artificial Intelligence (AI) dalam Memprediksi Hama dan Penyakit pada Tanaman Sayuran
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Artikel 3 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?drone" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">19 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        Penerapan Teknologi Drone dalam Pertanian Padi: Solusi untuk Efisiensi dan Produktivitas
-                    </p>
-                </div>
-            </div>
-
-            <!-- Artikel 4 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?agriculture" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">17 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        Inovasi Sistem Irigasi Tetes untuk Tanaman Hortikultura di Musim Kemarau
-                    </p>
-                </div>
-            </div>
-
-            <!-- Artikel 5 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?soil" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">15 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        Analisis Kualitas Tanah Menggunakan Sensor IoT: Langkah Awal Pertanian Presisi
-                    </p>
-                </div>
-            </div>
-
-            <!-- Artikel 6 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?farmer" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">13 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        Petani Milenial: Mengubah Wajah Pertanian Indonesia dengan Teknologi Digital
-                    </p>
-                </div>
-            </div>
-
-            <!-- Artikel 7 -->
-            <div class="flex space-x-4 border-b pb-3">
-                <img src="https://source.unsplash.com/80x80/?plant" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">10 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        Urban Farming di Lahan Sempit: Solusi Ketahanan Pangan Keluarga Perkotaan
-                    </p>
-                </div>
-            </div>
-
-            <!-- Artikel 8 -->
-            <div class="flex space-x-4">
-                <img src="https://source.unsplash.com/80x80/?weather" class="rounded w-20 h-20 object-cover" />
-                <div>
-                    <p class="text-xs text-gray-500">8 Maret 2025</p>
-                    <p class="font-semibold text-sm text-gray-800">
-                        Prediksi Cuaca dan Perubahan Iklim: Tantangan Baru bagi Petani Modern
-                    </p>
-                </div>
-            </div>
-
+            @endforeach
         </main>
+
     </div>
 
     <!-- FOOTER -->

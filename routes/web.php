@@ -61,7 +61,6 @@ Route::get('/users/pengumuman', [UsersController::class, 'pengumuman'])->name('u
 Route::get('/users/penyuluhan', [UsersController::class, 'penyuluhan'])->name('users.penyuluhan');
 Route::get('profile', [UsersController::class, 'profile'])->name('profile');
 Route::get('statistik', [UsersController::class, 'statistik'])->name('statistik');
-Route::get('/users/artikel', [UsersController::class, 'artikel'])->name('users.artikel');
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +70,7 @@ Route::get('/users/artikel', [UsersController::class, 'artikel'])->name('users.a
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
 Route::get('admin/a_create_artikel', [ArtikelController::class, 'create'])->name('artikel.create');
 Route::post('admin/a_create_artikel', [ArtikelController::class, 'store'])->name('artikel.store');
+Route::get('/users/artikel', [ArtikelController::class, 'index'])->name('users.artikel');
 
 /*
 |--------------------------------------------------------------------------

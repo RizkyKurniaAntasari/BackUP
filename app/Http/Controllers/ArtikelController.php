@@ -12,7 +12,8 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        //
+        $artikels = Artikel::latest()->get(); // Ambil semua artikel, terbaru duluan
+        return view('users.artikel', compact('artikels'));
     }
 
     /**

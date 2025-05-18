@@ -6,12 +6,6 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    // Artikel method
-    public function artikel()
-    {
-        return view('users.artikel');
-    }
-
     // <=============================== [ P E N G U M U M A N] ===============================>
     public function pengumuman()
     {

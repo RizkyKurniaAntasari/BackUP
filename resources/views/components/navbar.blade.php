@@ -22,7 +22,7 @@
         @guest
             <a href="{{ route('login') }}"
                 class="bg-[#143D1E] text-white px-3 py-1 rounded-full text-xs md:text-sm hover:bg-green-900">
-                Sign in
+                Masuk
             </a>
         @endguest
 
